@@ -1,0 +1,13 @@
+.container-modal-confirm {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000040;
+    z-index: 100;
+    .modal-confirm {
+        min-width: 350px;
+        max-height: 50%;
+    }
+}

@@ -1,0 +1,24 @@
+<div class="container-modal-confirm d-flex align-center justify-center" v-if="active" @click="close()">
+    <div class="modal-confirm white rounded pa-4" @click.stop>
+        <div class="header-modal d-flex justify-space-between">
+            <h3>{{ title }}</h3>{{content}}
+            <v-btn icon small color="light-blue darken-3" @click="close()" class="mb-4 ml-8">
+                <v-icon class="">mdi-close</v-icon>
+            </v-btn>
+        </div>
+        <input type="text" v-model="content">
+        <!-- <v-text-field label="Outlined" outlined dense v-if="activeinput" v-model="content"></v-text-field> -->
+        <div class="text-right">
+            <v-btn class="ma-1" color="primary" plain @click="close()">
+                Cancel
+            </v-btn>
+
+            <v-btn class="ma-1" color="error" plain @click="remove(id)" v-if="!activeinput">
+                Delete
+            </v-btn>
+            <v-btn class="ma-1" color="error" plain @click="change(id)" v-else>
+                Change
+            </v-btn>
+        </div>
+    </div>
+</div>

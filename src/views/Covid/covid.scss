@@ -1,0 +1,32 @@
+.container-covid {
+    .ps {
+        height: calc(100vh - 50px);
+    }
+    .background-covid {
+        width: 100vw;
+        height: calc(100vh - 64px);
+        background-image: url("https://corona.lmao.ninja/assets/img/rona.jpg");
+        /* The image used */
+        background-color: #cccccc;
+        /* Used if the image is unavailable */
+        background-position: center;
+        /* Center the image */
+        background-repeat: no-repeat;
+        /* Do not repeat the image */
+        background-size: cover;
+        /* Resize the background image to cover the entire container */
+        .img-avartar {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .loading {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        background-color: #00000033;
+        // z-index: 100;
+    }
+}

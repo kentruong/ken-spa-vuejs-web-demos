@@ -1,0 +1,51 @@
+<div class="container-sigin d-flex align-center justify-center" v-if="active" @click="active = false">
+    <div class="sig-in-from white rounded pa-6" @click.stop>
+        <div class="d-flex justify-space-between">
+            <div class="d-flex align-center justify-center mb-4 flex-1">
+                <v-img src="https://zero-theme-free.johnleider.com/img/logo.376fe171.svg" aspect-ratio="1" class="mr-2 rounded-circle" max-height="50" max-width="50">
+                </v-img>
+                <h1 class="light-blue--text text--darken-4 text-center">Sigin</h1>
+            </div>
+            <div>
+                <v-btn icon color="primary" @click="active = false">
+                    <v-icon class="font-weight-bold">mdi-close</v-icon>
+                </v-btn>
+            </div>
+        </div>
+        <v-container>
+            <v-row no-gutters>
+                <v-col cols="12">
+                    <v-text-field v-model="user.username" outlined label="Prepend inner" prepend-inner-icon="mdi-map-marker" dense hide-details class="mb-4"></v-text-field>
+                </v-col>
+                <v-col cols="12">
+                    <v-text-field outlined dense hide-details :append-icon="show4 ? 'mdi-eye' : 'mdi-eye-off'" :type="show4 ? 'text' : 'password'" name="input-10-2" label="Passwword" v-model="user.password" @click:append="show4 = !show4" class="mb-4"></v-text-field>
+                </v-col>
+                <v-col cols="12">
+                    <v-btn depressed color="green accent-4 white--text" dense block class="mb-4" @click="handleLogin()">
+                        Login
+                    </v-btn>
+                </v-col>
+                <v-col cols="12" sm="6">
+                    <div class="mr-sm-2">
+                        <v-btn depressed color="primary" dense block>
+                            <v-icon left>
+                                mdi-facebook
+                            </v-icon>
+                            Login
+                        </v-btn>
+                    </div>
+                </v-col>
+                <v-col cols="12" sm="6">
+                    <div class="ml-sm-2">
+                        <v-btn depressed color="error" dense block>
+                            <v-icon left>
+                                mdi-google
+                            </v-icon>
+                            Login
+                        </v-btn>
+                    </div>
+                </v-col>
+            </v-row>
+        </v-container>
+    </div>
+</div>

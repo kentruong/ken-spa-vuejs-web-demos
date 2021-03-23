@@ -1,0 +1,49 @@
+<div class="container-author d-flex align-center justify-center" v-if="active" @click="active=false">
+    <div class="container-login white pa-4 rounded" @click.stop="">
+        <v-container>
+            <v-row>
+                <v-col cols="12">
+                    <div class="d-flex justify-space-between">
+                        <div class="d-flex align-center">
+                            <v-img src="https://zero-theme-free.johnleider.com/img/logo.376fe171.svg" aspect-ratio="1" class="mr-2 rounded-circle" max-height="50" max-width="50">
+                            </v-img>
+                            <router-link to="#" class="title-login">Ken's Salon {{ myData }}</router-link>
+                        </div>
+                        <v-btn icon color="primary" small @click="active = false">
+                            <v-icon>mdi-close</v-icon>
+                        </v-btn>
+                    </div>
+                </v-col>
+                <v-col cols="12">
+                    <v-text-field v-model="userInfo.username" outlined hide-details label="Username" prepend-inner-icon="mdi-account-lock-outline" dense>
+                    </v-text-field>
+                </v-col>
+                <v-col cols="12">
+                    <v-text-field v-model="userInfo.password" outlined hide-details label="Password" prepend-inner-icon="mdi-key-outline" dense :append-icon="show4 ? 'mdi-eye' : 'mdi-eye-off'" :rules="[rules.required, rules.emailMatch]" @click:append="show4 = !show4" :type="show4 ? 'text' : 'password'">
+                    </v-text-field>
+                </v-col>
+                <v-col cols="12">
+                    <v-btn depressed block color="success" @click="login()">
+                        LOGIN
+                    </v-btn>
+                </v-col>
+                <v-col cols="12" sm=6>
+                    <v-btn depressed block color="primary">
+                        <v-icon left>
+                            mdi-facebook
+                        </v-icon>
+                        Facbook
+                    </v-btn>
+                </v-col>
+                <v-col cols="12" sm=6>
+                    <v-btn depressed block color="error">
+                        <v-icon left>
+                            mdi-google
+                        </v-icon>
+                        Google
+                    </v-btn>
+                </v-col>
+            </v-row>
+        </v-container>
+    </div>
+</div>

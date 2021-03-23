@@ -1,0 +1,12 @@
+<div class="container-user-info white rounded pa-4">
+    <slot name="avartar"></slot>
+    <slot name="username"></slot>
+    <slot></slot>
+    <slot name="phonenumber"></slot>
+    <v-btn tile block color="primary" @click="changeAvater()">
+        <v-icon left>
+            mdi-pencil
+        </v-icon>
+        {{ textbutton }}
+    </v-btn>
+</div>

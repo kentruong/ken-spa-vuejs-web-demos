@@ -1,0 +1,16 @@
+.container-sigin {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000040;
+    z-index: 100;
+    .flex-1 {
+        flex: 1;
+    }
+    .sig-in-from {
+        min-width: 450px;
+        max-width: 450px;
+    }
+}

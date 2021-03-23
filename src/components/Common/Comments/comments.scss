@@ -1,0 +1,19 @@
+.container-comments {
+    .add-comments {
+        border: 1px solid #cfd8dc;
+        .from-add-comment {
+            outline: none;
+            width: 100%;
+        }
+    }
+    .add-comments-common {
+        border-top: 1px solid #cfd8dc;
+    }
+}
+
+.btn-action {
+    cursor: pointer;
+    &:hover {
+        color: #0277bd;
+    }
+}

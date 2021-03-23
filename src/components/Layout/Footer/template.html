@@ -1,0 +1,71 @@
+<div class="container-footer pa-8 blue-grey darken-2">
+    <v-container>
+        <v-row no-gutters>
+            <v-col cols="6">
+                <div class="list-menu-footer">
+                    <div class="title-footer white--text text-subtitle-1">Liên hệ</div>
+                    <ul class="menus pl-0">
+                        <li class="menu py-2 d-flex align-center" v-for="(menu, index) in menus">
+                            <router-link to="/" class="text-decoration-none text-caption blue-grey--text text--lighten-2">
+                                <v-icon class="blue-grey--text text--lighten-2 mr-1" small>mdi-{{ menu.icon }}</v-icon>
+                                <span>{{ menu.title }}</span>
+                            </router-link>
+                        </li>
+                    </ul>
+                </div>
+            </v-col>
+            <v-col cols="6">
+                <div class="title-footer white--text text-subtitle-1">Những hình ảnh mới nhất của Ken's Salon</div>
+                <div>
+                    <div class="d-flex">
+                        <v-avatar>
+                            <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
+                        </v-avatar>
+                        <div class="white--text text-caption">
+                            <p class=" ml-2">Ken's Salon</p>
+                            <p class="sbi_bio">
+                                <img class="img_sbi_bio" draggable="false" role="img" alt="🌱" src="https://s.w.org/images/core/emoji/13.0.1/svg/1f331.svg"> A boutique spa at heart of Saigon
+                                <br> Facial care | Body massage | Body scrub &amp; wrap | Hair &amp; Nail care | Organic waxing | Prenatal massage
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <v-row no-gutters>
+                    <div class="container-img">
+                        <img class="img mr-2" src="https://saspa.vn/wp-content/uploads/sb-instagram-feed-images/162087407_818387438886392_9176874214993855847_nthumb.jpg">
+                        <img class="img mr-2" src="https://saspa.vn/wp-content/uploads/sb-instagram-feed-images/160570450_739513020032301_1385505959085903607_nthumb.jpg">
+                        <img class="img mr-2" src="https://saspa.vn/wp-content/uploads/sb-instagram-feed-images/159904065_119017613569524_6086257566297350443_nthumb.jpg">
+                        <img class="img mr-2" src="https://saspa.vn/wp-content/uploads/sb-instagram-feed-images/158558136_503303387711495_8017583856806987047_nthumb.jpg">
+                        <img class="img mr-2" src="https://saspa.vn/wp-content/uploads/sb-instagram-feed-images/157090071_271510704503048_5514237169206261708_nthumb.jpg">
+                    </div>
+                </v-row>
+            </v-col>
+        </v-row>
+        <v-row no-gutters>
+            <v-col cols="12">
+                <div class="social text-center py-6">
+                    <v-btn class="mx-2" fab dark small color="primary">
+                        <v-icon dark>
+                            mdi-facebook
+                        </v-icon>
+                    </v-btn>
+                    <v-btn class="mx-2" fab dark small color="pink darken-1">
+                        <v-icon dark>
+                            mdi-instagram
+                        </v-icon>
+                    </v-btn>
+                    <v-btn class="mx-2" fab dark small color="light-blue">
+                        <v-icon dark>
+                            mdi-twitter
+                        </v-icon>
+                    </v-btn>
+                    <v-btn class="mx-2" fab dark small color="red darken-2">
+                        <v-icon dark>
+                            mdi-google
+                        </v-icon>
+                    </v-btn>
+                </div>
+            </v-col>
+        </v-row>
+    </v-container>
+</div>

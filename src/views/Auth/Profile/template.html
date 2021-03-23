@@ -1,0 +1,13 @@
+<div class="container-profile">
+    <div class="background-profile d-flex align-center justify-center">
+        <user-info textbutton="Change Avatar">
+            <div class="text-center" slot="avartar">
+                <img :src="`${avartar}${changeAvatar}`" alt="Image Not found please reload page" class="img-avartar rounded-circle" elevation="10">
+            </div>
+            <h2 class="text-center mb-2 light-blue--text text--darken-4" slot="username">{{ getInfo.username }}</h2>
+            <p slot="phonenumber" class="d-flex justify-center text-center mb-4">
+                <v-icon class="mr-1">mdi-cellphone-basic</v-icon>0988889999
+            </p>
+        </user-info>
+    </div>
+</div>

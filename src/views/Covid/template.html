@@ -1,0 +1,12 @@
+<div class="container-covid">
+    <div class="background-covid">
+        <div class="loading d-flex align-center justify-center" v-if="checkdata">
+            <v-progress-circular :rotate="360" :size="100" :width="15" :value="value" color="teal">
+                {{ value }}
+            </v-progress-circular>
+        </div>
+        <perfect-scrollbar v-else>
+            <Items :initData="datas" title="COVID-19 Global Stats" />
+        </perfect-scrollbar>
+    </div>
+</div>

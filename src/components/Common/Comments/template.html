@@ -1,0 +1,90 @@
+<div class="container-comments">
+    <v-container>
+        <v-row no-gutters>
+            <v-col cols="12">
+                <h2 class="mb-2">Comments</h2>
+            </v-col>
+        </v-row>
+        <v-row no-gutters>
+            <v-col cols="12">
+                <div class="comments-item mb-4" v-for="(item,index) in listComments" :key="index">
+                    <div class="container-comment-auth mb-2">
+                        <div class="info-auth d-flex align-center mb-1">
+                            <v-avatar size="30">
+                                <img :src="item.commentAuth.img" alt="John">
+                            </v-avatar>
+                            <span class="text-caption ml-2 light-blue--text text--darken-3">{{
+                                item.commentAuth.name }}</span>
+                            <span class="blue-grey--text text--lighten-3 text-caption ml-3">{{ item.commentAuth.date
+                                }}</span>
+                        </div>
+                        <div class="content-comment">
+                            <p class="mb-0">{{ item.commentAuth.content }}</p>
+                        </div>
+                        <div class="action d-flex align-center text-caption">
+                            <span class="mr-1 btn-action btn-like">Like</span>
+                            <span class="mx-1 btn-action btn-reply">Reply</span>
+                            <v-menu offset-y left>
+                                <template v-slot:activator="{ on, attrs }">
+                                    <v-icon class="ml-1" v-bind="attrs" v-on="on">mdi-dots-horizontal</v-icon>
+                                </template>
+                                <v-list class="py-0">
+                                    <v-list-item>
+                                        <v-list-item-title>
+                                            <div class="text-caption d-flex align-center btn-action" @click="handleEditComment(item.commentAuth.id_cmt)">
+                                                <v-icon class="mr-1 btn-action" size="16">mdi-clipboard-edit-outline
+                                                </v-icon>Edit
+                                            </div>
+                                        </v-list-item-title>
+                                    </v-list-item>
+                                    <v-list-item>
+                                        <v-list-item-title>
+                                            <div class="text-caption d-flex align-center btn-action" @click="handleDeleteComment(item.commentAuth.id_cmt)">
+                                                <v-icon class="mr-1 btn-action" size="16">mdi-delete-alert-outline
+                                                </v-icon>Delete
+                                            </div>
+                                        </v-list-item-title>
+                                    </v-list-item>
+                                </v-list>
+                            </v-menu>
+                        </div>
+                    </div>
+                    <div class="container-comment-mem ml-4 mb-3" v-for="(item, index) in item.commentItems" :key="index">
+                        <div class="info-auth d-flex align-center mb-1">
+                            <v-avatar size="30">
+                                <img :src="item.img" alt="John">
+                            </v-avatar>
+                            <span class="text-caption ml-2 light-blue--text text--darken-3">{{ item.name }}</span>
+                            <span class="blue-grey--text text--lighten-3 text-caption ml-3">{{ item.date }}</span>
+                        </div>
+                        <div class="content-comment">
+                            <p class="mb-0">{{ item.content }}</p>
+                        </div>
+                    </div>
+                    <!-- <div class="add-comments px-2 ml-4 rounded mt-1 d-flex align-center">
+                        <textarea name="" id="" cols="30" rows="1" class="from-add-comment"
+                            placeholder="write your reply comment ..." v-model="contentComment"></textarea>
+                        <v-btn icon color="primary" @click="postComment(item.commentAuth.id_cmt)">
+                            <v-icon>mdi-check-bold</v-icon>
+                        </v-btn>
+                    </div> -->
+                    <!-- {{ listComments }} -->
+                </div>
+            </v-col>
+        </v-row>
+        <v-row no-gutters>
+            <v-col cols="12">
+                <div class="add-comments-common pt-3">
+                    <h2>Write Comments</h2>
+                    <div class="add-comments px-2 rounded mt-1 d-flex align-center">
+                        <textarea name="" id="" cols="30" rows="1" class="from-add-comment" placeholder="write your comment ..." v-model="contentComment"></textarea>
+                        <v-btn icon color="primary" @click="handlePostComment()">
+                            <v-icon>mdi-check-bold</v-icon>
+                        </v-btn>
+                    </div>
+                </div>
+            </v-col>
+        </v-row>
+    </v-container>
+    <modal-confirm :active="activeModal" :id="id" :title="title" :activeinput="activeinput" :contentComment="contentComment" @close-modal="closeModal" @remove-data="deleteComment" @change-comment="editComment"></modal-confirm>
+</div>

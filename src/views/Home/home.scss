@@ -1,0 +1,39 @@
+.container-home {
+    .introduce {
+        webkit-box-shadow: 0 1px 30px rgb(0 0 0 / 10%);
+        -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 30px rgb(0 0 0 / 10%);
+        border: none;
+        .title-content {
+            font-size: 24px;
+            background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+    }
+    .img-introduce {
+        border: none;
+        height: 100%;
+    }
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .line_divider_border {
+            width: 100px;
+            height: 1px;
+            background-color: #90a4ae;
+        }
+        .line_divider_seperator {}
+    }
+    .parallax {
+        background-image: url(https://www.tymyspa.com/FileStorage/Slide/Thumbnail/1.jpg);
+        background-position: center center;
+        padding: 40px 0 40px 0;
+    }
+    .hot_deal {
+        border: none;
+        height: 100%;
+    }
+}

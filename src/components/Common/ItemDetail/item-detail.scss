@@ -1,0 +1,13 @@
+.container-item-detail {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000040;
+    z-index: 100;
+    .item-detail {
+        min-width: 300px;
+        // max-width: 450px;
+    }
+}

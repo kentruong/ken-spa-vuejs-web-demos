@@ -1,0 +1,121 @@
+<v-app-bar app color="white" class="container-header">
+    <div class="d-flex align-center">
+        <v-img src="https://zero-theme-free.johnleider.com/img/logo.376fe171.svg" aspect-ratio="1" class="mr-2 rounded-circle" max-height="50" max-width="50">
+        </v-img>
+
+        <router-link to="#" class="title-header">Ken's Salon</router-link>
+    </div>
+
+    <v-spacer></v-spacer>
+    <div class="container-menus">
+        <ul class="list-menus d-flex align-center">
+            <li class="item-menu" @click="active = 1">
+                <router-link to="/" :class="active === 1 ? 'light-blue--text text--darken-4' : 'blue-grey--text text--lighten-2'">
+                    HOME
+                </router-link>
+            </li>
+            <li class="item-menu" @click="active = 2">
+                <router-link to="/" :class="active === 2 ? 'light-blue--text text--darken-4' : 'blue-grey--text text--lighten-2'">
+                    SERVICE
+                </router-link>
+            </li>
+            <li class="item-menu" @click="active = 3">
+                <router-link to="/" :class="active === 3 ? 'light-blue--text text--darken-4' : 'blue-grey--text text--lighten-2'">
+                    STORE
+                </router-link>
+            </li>
+            <li class="item-menu" @click="active = 4">
+                <router-link to="/profile" :class="active === 4 ? 'light-blue--text text--darken-4' : 'blue-grey--text text--lighten-2'">
+                    PROFILE
+                </router-link>
+            </li>
+            <li class="item-menu" @click="active = 5">
+                <router-link to="/covid-19" :class="active === 5 ? 'light-blue--text text--darken-4' : 'blue-grey--text text--lighten-2'">
+                    COVID19
+                </router-link>
+            </li>
+            <li class="item-menu" v-if="!userInfo.username">
+                <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-btn class="" @click="login()" icon small fab color="light-blue darken-4" v-bind="attrs"
+                            v-on="on" small>
+                            <v-icon>mdi-login-variant</v-icon>
+                        </v-btn>
+                    </template>
+                    <span>SigIn/SigUp</span>
+                </v-tooltip>
+            </li>
+            <li class="item-menu" v-else>
+                <v-avatar>
+                    <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
+                </v-avatar>
+                <v-menu transition="slide-y-transition" bottom offset-y left>
+                    <template v-slot:activator="{ on, attrs }">
+                        <!-- <v-btn class="ma-2" small fab color="light-blue darken-4" v-bind="attrs" v-on="on">
+                            <v-icon>mdi-book</v-icon>
+                        </v-btn> -->
+                        <span class="ml-2 light-blue--text text--darken-4" v-bind="attrs" v-on="on">{{ userInfo.username
+                            }}</span>
+                    </template>
+                    <v-list>
+                        <v-list-item>
+                            <v-list-item-title>
+                                <router-link to="/profile" class="text-decoration-none text-caption light-blue--text text--darken-4">
+                                    <v-icon class="mr-1 light-blue--text text--darken-4" small>mdi-account-music-outline
+                                    </v-icon>Profile
+                                </router-link>
+                            </v-list-item-title>
+                        </v-list-item>
+                        <v-list-item>
+                            <v-list-item-title @click="logout()">
+                                <router-link to="/profile" class="text-decoration-none text-caption light-blue--text text--darken-4">
+                                    <v-icon class="mr-1 light-blue--text text--darken-4" small>mdi-logout-variant
+                                    </v-icon>Logout
+                                </router-link>
+                            </v-list-item-title>
+                        </v-list-item>
+                    </v-list>
+                </v-menu>
+            </li>
+            <li class="item-menu">
+                <v-menu bottom offset-y :close-on-content-click="false">
+                    <template v-slot:activator="{ on, attrs }">
+                        <!-- <v-btn color="primary" dark v-bind="attrs" v-on="on">
+                            Dropdown
+                        </v-btn> -->
+                        <div v-bind="attrs" v-on="on">
+                            <v-badge color="red" overlap dot>
+                                <v-btn icon color="blue-grey--text text--lighten-2" small>
+                                    <v-icon>mdi-bell</v-icon>
+                                </v-btn>
+                            </v-badge>
+                        </div>
+                    </template>
+
+                    <v-list>
+                        <v-list-item>
+                            <v-list-item-title class="pa-2" v-ripple="{ class: `${color}--text` }" v-for="color in ['primary']" :key="color">
+                                <v-icon class="mr-2 light-blue--text text--darken-4">mdi-bookmark-check</v-icon>Ban đã login thành công
+                            </v-list-item-title>
+                        </v-list-item>
+                        <v-list-item>
+                            <v-list-item-title class="pa-2" v-ripple="{ class: `${color}--text` }" v-for="color in ['primary']" :key="color">
+                                <v-icon class="mr-2 light-blue--text text--darken-4">mdi-bell-check</v-icon>Đăng kí để nhận được <span class="green--text">Commbo</span> đặc biệt
+                            </v-list-item-title>
+                        </v-list-item>
+                        <v-list-item>
+                            <v-list-item-title class="pa-2" v-ripple="{ class: `${color}--text` }" v-for="color in ['primary']" :key="color">
+                                <v-icon class="mr-2 light-blue--text text--darken-4">mdi-sale</v-icon>Sale off <span class="red--text">35%</span> các dịch vụ
+                            </v-list-item-title>
+                        </v-list-item>
+                    </v-list>
+                </v-menu>
+                <!-- <v-badge color="red" overlap dot>
+                    <v-btn icon color="blue-grey--text text--lighten-2" small>
+                        <v-icon>mdi-bell</v-icon>
+                    </v-btn>
+                </v-badge> -->
+            </li>
+        </ul>
+    </div>
+</v-app-bar>

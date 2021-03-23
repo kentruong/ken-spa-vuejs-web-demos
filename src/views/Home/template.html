@@ -1,0 +1,155 @@
+<div class="container-home">
+    <Carousel />
+    <v-container>
+        <v-row no-gutters>
+            <v-col cols="12" md="6" sm="6">
+                <v-card class="my-1 mx-2 rounded pa-4 img-introduce" outlined tile>
+                    <v-img class="my-1 mx-2 rounded" :aspect-ratio="16/11" src="https://saspa.vn/wp-content/uploads/2021/03/Web-Sa%CC%89-hi%CC%80nh-nho%CC%89-vuo%CC%82ng-1.jpg">
+                    </v-img>
+                </v-card>
+            </v-col>
+            <v-col cols="12" md="6" sm="6">
+                <v-card class="my-1 mx-2 rounded introduce pa-4" outlined tile>
+                    <v-card-title>
+                        <span class="title-content">Ken's Salon</span>
+                    </v-card-title>
+                    <v-card-subtitle>
+                        Góc nhỏ dịu dàng giữa lòng phố xá
+                    </v-card-subtitle>
+                    <v-card-subtitle>
+                        Tĩnh lặng và dịu sâu – đó là cảm giác đầu tiên khi khẽ mở cánh cửa gỗ nâu quen thuộc Sả spa muốn mang đến cho khách hàng – những người bạn của mình.
+                    </v-card-subtitle>
+                    <v-card-subtitle>
+                        Giữa trung tâm Sài Gòn náo nhiệt, Sả khép mình ẩn náu trong một không gian kín đáo, dịu dàng. Nơi sẽ ngay lập tức như đưa bạn trở về nhà, như lạc về một miền kí ức thân thương của những nồi nước lá xông thơm phức đến từng ngón tay, sợi tóc. Để cảm xúc
+                        được nâng niu, chiều chuộng sau một ngày dài mệt mỏi…
+                    </v-card-subtitle>
+                    <v-btn color="light-blue darken-4" text>
+                        Tìm Hiểu Thêm
+                    </v-btn>
+                </v-card>
+            </v-col>
+        </v-row>
+        <v-row no-gutters>
+            <v-col cols="12">
+                <div class="blue-grey--text text--lighten-2 text-center px-4 pt-6 pb-2 text-subtitle-1">Top Dịch Vụ Trong Tháng
+                </div>
+                <div class="inner">
+                    <div class="line_divider_border"></div>
+                    <div class="line_divider_seperator pa-1">
+                        <v-icon class="light-blue--text text--darken-4">mdi-leaf</v-icon>
+                    </div>
+                    <div class="line_divider_border"></div>
+                </div>
+            </v-col>
+        </v-row>
+        <v-row no-gutters>
+            <v-col cols="12" md="4" v-for="(item, index) in services" :key="index">
+                <v-hover>
+                    <template v-slot:default="{ hover }">
+                        <v-card class="mx-auto my-6" max-width="374" :class="`elevation-${hover ? 8 : 2}`">
+                            <v-img height="250" :src="item.image"></v-img>
+
+                            <v-card-title class="blue-grey--text text--lighten-2">{{ item.title }}</v-card-title>
+
+                            <v-card-text>
+                                <div>{{ item.info }}</div>
+                            </v-card-text>
+
+                            <v-divider class="mx-4"></v-divider>
+
+                            <v-card-title class="subtitle-1 blue-grey--text text--lighten-2">Tonight's availability
+                            </v-card-title>
+
+                            <v-card-text>
+                                <v-chip-group v-model="selection" active-class="light-blue darken-2 white--text" column>
+                                    <v-chip>5:30PM</v-chip>
+
+                                    <v-chip>7:30PM</v-chip>
+
+                                    <v-chip>8:00PM</v-chip>
+
+                                    <v-chip>9:00PM</v-chip>
+                                </v-chip-group>
+                            </v-card-text>
+
+                            <v-card-actions>
+                                <v-btn color="light-blue darken-4" text
+                                    :to='`/deatail-service/${item.id}&${item.title}`'>
+                                    Tìm Hiểu Thêm
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </template>
+                </v-hover>
+            </v-col>
+        </v-row>
+    </v-container>
+    <div class="parallax">
+        <v-container>
+            <v-row>
+                <v-col cols="12" md="6" sm="6">
+                    <div class="standard_wrapper white rounded pa-4">
+                        <v-card-title class="subtitle-1 blue-grey--text text--lighten-2">Góc Bình Yên
+                        </v-card-title>
+                        <v-card-text>
+                            <div class="blue-grey--text text--darken-2">...cho mình và người thân</div>
+                        </v-card-text>
+                        <v-card-text>
+                            <div class="blue-grey--text text--darken-2">“Ken's Salon là nơi có thể đi “trốn”một mình khi cần hoặc làm nơi hẹn hò với bạn bè đều tốt! Mà đâu có xa xôi gì, ngay giữa trung tâm Sài Gòn tấp nập nữa mới hay chứ. Bởi vậy bạn dẫn đến có một lần à, là chị mua thẻ member
+                                nguyện làm “thành viên” của nhà Ken's Salon luôn”.
+                                <div>– <span class="font-weight-bold">Chị Hằng Nguyễn</span> chia sẻ.</div>
+                            </div>
+                        </v-card-text>
+                    </div>
+                </v-col>
+            </v-row>
+        </v-container>
+    </div>
+    <v-container>
+        <v-row no-gutters>
+            <v-col cols="12">
+                <div class="blue-grey--text text--lighten-2 text-center px-4 pt-6 pb-2 text-subtitle-1">Hot Deals Trong Tháng
+                </div>
+                <div class="inner">
+                    <div class="line_divider_border"></div>
+                    <div class="line_divider_seperator pa-1">
+                        <v-icon class="light-blue--text text--darken-4">mdi-leaf</v-icon>
+                    </div>
+                    <div class="line_divider_border"></div>
+                </div>
+            </v-col>
+        </v-row>
+        <v-row no-gutters>
+            <v-col cols="12" md="6" sm="6">
+                <v-card class="my-1 mx-2 rounded pa-4 img-introduce" outlined tile>
+                    <v-img class="my-1 mx-2 rounded" :aspect-ratio="1" src="https://sa.teekayleo.com/wp-content/uploads/2021/01/28.jpg">
+                    </v-img>
+                </v-card>
+            </v-col>
+            <v-col cols="12" md="6" sm="6">
+                <v-card class="my-1 mx-2 rounded pa-4 hot_deal d-flex align-center" outlined tile>
+                    <div>
+                        <v-card-subtitle>
+                            Để thay đổi thói quen hay bỏ qua những dấu hiệu mệt mỏi của cơ thể, của cảm xúc, Sả sẽ phát hành thêm các loại Thẻ trả trước với nhiều mệnh giá khác nhau để khuyến khích mọi người đến Spa chăm sóc bản thân, lắng nghe cơ thể mình nhiều hơn. Cụ thể:
+                        </v-card-subtitle>
+                        <v-card-subtitle>
+                            Khách mua thẻ trả trước 3 triệu sẽ được TẶNG THÊM 1 triệu sử dụng dịch vụ – HSD: 6 tháng
+                        </v-card-subtitle>
+                        <v-card-subtitle>
+                            Khách mua thẻ trả trước 5 triệu sẽ được TẶNG THÊM 2 triệu sử dụng dịch vụ – HSD: 9 tháng
+                        </v-card-subtitle>
+                        <v-card-subtitle>
+                            Khách mua thẻ trả trước 10 triệu sẽ được TẶNG THÊM 5 triệu sử dụng dịch vụ – HSD: 12 tháng
+                        </v-card-subtitle>
+                        <v-card-subtitle>
+                            **** Ngoài ra vào những giờ thấp điểm khách sỡ hữu thẻ trả trước sẽ được giảm giá dịch vụ trước khi trừ vào thẻ hoặc được tặng những dịch vụ mới của Sả, hưởng ưu đãi về các sản phẩm bán lẻ tại Shop corner.
+                        </v-card-subtitle>
+                        <v-btn color="light-blue darken-4" text>
+                            Tìm Hiểu Thêm
+                        </v-btn>
+                    </div>
+                </v-card>
+            </v-col>
+        </v-row>
+    </v-container>
+</div>

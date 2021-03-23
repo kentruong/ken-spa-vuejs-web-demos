@@ -1,0 +1,26 @@
+.detail-service {
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .line_divider_border {
+            width: 100px;
+            height: 1px;
+            background-color: #90a4ae;
+        }
+    }
+    .read-more {
+        cursor: pointer;
+        .demo {
+            display: none;
+        }
+        &:hover .demo {
+            display: inline;
+        }
+    }
+    .list-price {
+        .price-item {
+            list-style-type: none;
+        }
+    }
+}

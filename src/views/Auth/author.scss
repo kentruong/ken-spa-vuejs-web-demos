@@ -1,0 +1,24 @@
+.container-author {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    background-color: #1976d24a;
+    .container-login {
+        min-width: 300px;
+        width: 50%;
+        max-width: 450px;
+        min-height: 300px;
+        // height: 50%;
+        .title-login {
+            font-size: 24px;
+            background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+    }
+}
