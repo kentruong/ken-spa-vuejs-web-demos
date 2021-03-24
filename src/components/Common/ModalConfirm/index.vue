@@ -55,6 +55,12 @@
                 }
                 this.$emit("change-comment", data)
             }
+        },
+        watch: {
+          contentComment(newVal, oldVal){
+             console.log(newVal, oldVal);
+             this.content = newVal;
+          }
         }
     }
 </script>
