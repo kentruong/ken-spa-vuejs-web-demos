@@ -15,7 +15,7 @@
         <v-container>
             <v-row no-gutters>
                 <v-col cols="12">
-                    <v-text-field v-model="user.username" outlined label="Prepend inner" prepend-inner-icon="mdi-map-marker" dense hide-details class="mb-4"></v-text-field>
+                    <v-text-field v-model="user.username" outlined label="User name" prepend-inner-icon="mdi-map-marker" dense hide-details class="mb-4"></v-text-field>
                 </v-col>
                 <v-col cols="12">
                     <v-text-field outlined dense hide-details :append-icon="show4 ? 'mdi-eye' : 'mdi-eye-off'" :type="show4 ? 'text' : 'password'" name="input-10-2" label="Passwword" v-model="user.password" @click:append="show4 = !show4" class="mb-4"></v-text-field>
