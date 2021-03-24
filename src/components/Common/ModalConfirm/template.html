@@ -6,8 +6,8 @@
                 <v-icon class="">mdi-close</v-icon>
             </v-btn>
         </div>
-        <input type="text" v-model="content">
-        <!-- <v-text-field label="Outlined" outlined dense v-if="activeinput" v-model="content"></v-text-field> -->
+        <!-- <input type="text" v-model="content"> -->
+        <v-text-field label="Outlined" outlined dense v-if="activeinput" v-model="content"></v-text-field>
         <div class="text-right">
             <v-btn class="ma-1" color="primary" plain @click="close()">
                 Cancel
